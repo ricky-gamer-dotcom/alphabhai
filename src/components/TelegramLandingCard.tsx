@@ -138,7 +138,7 @@ export function TelegramLandingCard({
           {/* Left: Real Telegram Brand Logo */}
           <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">
             <img
-              src="/telegram-logo.svg"
+              src="./telegram-logo.svg"
               alt="Telegram"
               className="w-full h-full object-contain drop-shadow-[0_2px_8px_rgba(34,158,217,0.6)]"
               loading="eager"
@@ -156,7 +156,7 @@ export function TelegramLandingCard({
           {/* Right: Real Telegram Brand Logo */}
           <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">
             <img
-              src="/telegram-logo.svg"
+              src="./telegram-logo.svg"
               alt="Telegram"
               className="w-full h-full object-contain drop-shadow-[0_2px_8px_rgba(34,158,217,0.6)]"
               loading="eager"

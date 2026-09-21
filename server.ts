@@ -90,7 +90,12 @@ function writeConfig(config: any) {
     }
 
     delete config.isNewGalleryUpload;
-    fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2), "utf-8");
+    const jsonStr = JSON.stringify(config, null, 2);
+    fs.writeFileSync(CONFIG_FILE, jsonStr, "utf-8");
+    try {
+      const publicPath = path.join(process.cwd(), "public", "public-config.json");
+      fs.writeFileSync(publicPath, jsonStr, "utf-8");
+    } catch (e) {}
     return true;
   } catch (err) {
     console.error("Error writing config file:", err);

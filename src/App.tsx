@@ -97,7 +97,34 @@ export default function App() {
         }
       })
       .catch((err) => {
-        console.log('Server config sync ready:', err.message);
+        // Fallback for static hosting like GitHub Pages
+        fetch('./public-config.json')
+          .then((res) => {
+            if (!res.ok) throw new Error('Static config not found');
+            return res.json();
+          })
+          .then((staticConfig) => {
+            if (isMounted && staticConfig && staticConfig.channelName) {
+              setConfig((prev) => {
+                const merged = {
+                  ...prev,
+                  ...staticConfig,
+                  telegramLink: 'https://t.me/+mVO1R7zmazwyMDg9',
+                  buttonText: 'JOIN NOW',
+                };
+                try {
+                  localStorage.setItem('alpha_bhai_config', JSON.stringify(merged));
+                  if (merged.avatarUrl) {
+                    localStorage.setItem('alpha_bhai_avatar', merged.avatarUrl);
+                  }
+                } catch (e) {}
+                return merged;
+              });
+            }
+          })
+          .catch((staticErr) => {
+            console.log('Config initialization ready:', staticErr.message);
+          });
       });
 
     return () => {
