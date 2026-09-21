@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="telegram-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#2AABEE"/>
+      <stop offset="100%" stop-color="#229ED9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="120" cy="120" r="120" fill="url(#telegram-gradient)"/>
+  <path fill="#ffffff" d="M54.4 116.6l117-48.1c5.4-2 10.3 1.4 8.5 9.8l-20 94.2c-1.5 6.7-5.5 8.3-11.1 5.2l-30.6-22.6-14.8 14.2c-1.6 1.6-3 3-6.2 3l2.2-31.2 56.8-51.3c2.5-2.2-.5-3.4-3.8-1.2L81.6 132.8l-30.3-9.5c-6.6-2-6.7-6.6 1.4-9.8z"/>
+</svg>

@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #000000;
+    color: #f8fafc;
+  }
+}
+
+/* Eye-catching CTA Animations for Luxury Dark Glass Theme */
+@keyframes ctaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.95), 0 0 30px rgba(255, 255, 255, 0.16), inset 0 1px 2px rgba(255, 255, 255, 0.45);
+  }
+}
+
+@keyframes ctaGlowBreath {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes ctaShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  30%, 100% {
+    transform: translateX(350%) skewX(-20deg);
+  }
+}
+
+/* Subtle aesthetic floating ambient light */
+@keyframes ambientDrift1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(25px, -30px) scale(1.08);
+  }
+}
+
+@keyframes ambientDrift2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(0.95);
+  }
+}
+
+.animate-cta-pulse {
+  animation: ctaPulse 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-cta-glow {
+  animation: ctaGlowBreath 2.6s ease-in-out infinite;
+}
+
+.animate-cta-shimmer {
+  animation: ctaShimmer 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-ambient-1 {
+  animation: ambientDrift1 14s ease-in-out infinite;
+}
+
+.animate-ambient-2 {
+  animation: ambientDrift2 18s ease-in-out infinite;
+}
+

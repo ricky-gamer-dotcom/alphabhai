@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALPHA BHAI - Official Telegram Channel</title>
+    <meta name="description" content="Official Telegram Channel of ALPHA BHAI. Join 28.5K+ members. Powered by JACK AGENCY." />
+    <meta property="og:title" content="ALPHA BHAI - Official Telegram Channel" />
+    <meta property="og:description" content="Official Telegram Channel of ALPHA BHAI. Join 28.5K+ members. Powered by JACK AGENCY." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://t.me">
+    <link rel="dns-prefetch" href="https://t.me">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800;900&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      // Disable automatic tracking so events ONLY fire manually
+      fbq('set', 'autoConfig', false, '1061117969965797');
+      fbq('init', '1061117969965797');
+
+      // 1000% Global Interceptor on fbq: Block any duplicate Subscribe calls
+      var _origFbq = window.fbq;
+      var _subLock = false;
+      try {
+        if (sessionStorage.getItem('alpha_pixel_sub_fired') === '1' || localStorage.getItem('alpha_pixel_sub_fired') === '1') {
+          _subLock = true;
+        }
+      } catch (e) {}
+
+      window.fbq = function() {
+        if (arguments[0] === 'track' && arguments[1] === 'Subscribe') {
+          if (_subLock) {
+            console.warn('[Meta Pixel Lock] Blocked duplicate Subscribe event.');
+            return;
+          }
+          _subLock = true;
+          try {
+            sessionStorage.setItem('alpha_pixel_sub_fired', '1');
+            localStorage.setItem('alpha_pixel_sub_fired', '1');
+          } catch (e) {}
+        }
+        return _origFbq.apply(this, arguments);
+      };
+
+      for (var prop in _origFbq) {
+        if (Object.prototype.hasOwnProperty.call(_origFbq, prop)) {
+          window.fbq[prop] = _origFbq[prop];
+        }
+      }
+
+      // Manual one-time PageView firing guard
+      if (!window.__metaPixelPageViewFired) {
+        window.__metaPixelPageViewFired = true;
+        try {
+          if (sessionStorage.getItem('alpha_pixel_pv_fired') !== '1') {
+            sessionStorage.setItem('alpha_pixel_pv_fired', '1');
+            fbq('track', 'PageView');
+          }
+        } catch (e) {
+          fbq('track', 'PageView');
+        }
+      }
+    </script>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <!-- Meta Pixel Fallback Noscript -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1061117969965797&ev=PageView&noscript=1"
+    alt="Meta Pixel" /></noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
